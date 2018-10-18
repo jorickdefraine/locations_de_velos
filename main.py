@@ -1,3 +1,5 @@
-'''
-si vous avez bien pull, ce message s'affiche.
-'''
+import pandas as pd
+
+df = pd.read_csv('day.csv')
+
+print(df)
