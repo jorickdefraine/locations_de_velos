@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import data
+import seaborn as sns
 
 def OpenData():
     df = pd.read_csv('data/day.csv')
@@ -18,4 +19,17 @@ def affiche_corr(DataFrame,size):
     ax.matshow(correlation)
     plt.xticks(range(len(correlation.columns)), correlation.columns)
     plt.yticks(range(len(correlation.columns)), correlation.columns)
+    plt.title("Matrice de corrélation pour la location de vélo")
+    plt.show()
+
+def affiche_hm(DataFrame):
+    '''
+    fonction qui affiche la heat map pour chaque pair de colonne des données.
+
+    Paramètres:
+        DataFrames: pandas DataFrame
+        size: taille verticale et horizontale de la matrice de correlation'''
+    correlation = DataFrame.corr(method='pearson')
+    sns.heatmap(correlation, xticklabels=correlation.columns, yticklabels=correlation.columns)
+    plt.title("Heat Map pour location de vélo")
     plt.show()
