@@ -31,5 +31,5 @@ def affiche_hm(DataFrame):
         size: taille verticale et horizontale de la matrice de correlation'''
     correlation = DataFrame.corr(method='pearson')
     sns.heatmap(correlation, xticklabels=correlation.columns, yticklabels=correlation.columns)
-    plt.title("Heat Map pour location de vélo")
+    plt.title("Matrice de corrélation pour la location de vélo")
     plt.show()
