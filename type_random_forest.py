@@ -1,15 +1,7 @@
-import pandas as pd
-from pandas import datetime
-import numpy as np
 import matplotlib.pyplot as plt
-import data
+import pandas as pd
 import seaborn as sns
-from statsmodels.tsa.arima_model import ARIMA
-from pandas import DataFrame
-from sklearn.datasets import make_classification
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.ensemble import ExtraTreesClassifier
-from sklearn import datasets
+
 
 def OpenData():
     df = pd.read_csv('data/day.csv')
