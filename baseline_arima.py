@@ -55,6 +55,8 @@ def arima():
 
 
 def rmsle(predict_cnt, actual_cnt):
+    print(predict_cnt)
+    print(actual_cnt)
     for i in range(1,731):
         somme = (np.log(predict_cnt[i] + 1) - np.log(actual_cnt[i] + 1)) ** 2
     print("rsmle")
