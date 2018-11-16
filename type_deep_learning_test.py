@@ -32,3 +32,11 @@ dataset['dteday'] = pandas.to_datetime(dataset['dteday'])
 #index affiche correctement que les dates sont datetime
 dataset.index = dataset['dteday']
 print(dataset.dtypes)
+
+#day permet de récupérer le jour du mois [0,31]
+t1 = dataset['dteday'][31].day
+print(t1)
+
+#weekday permet de récupérer le jour de la semaine [0,6]
+t2 = dataset['dteday'][6].weekday()
+print(t2)
