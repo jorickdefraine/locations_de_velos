@@ -1,11 +1,6 @@
 import matplotlib.pyplot as plt
-import pandas as pd
 import seaborn as sns
 
-
-def OpenData():
-    df = pd.read_csv('data/day.csv')
-    return df
 
 
 def affiche_corr(df):
