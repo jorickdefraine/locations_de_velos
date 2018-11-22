@@ -4,10 +4,12 @@ Created on Thu Nov  8 09:12:45 2018
 
 @author: charpak4.21
 """
+from type_random_forest import OpenData
 
 import pandas
 from pandas.plotting import scatter_matrix
 import matplotlib.pyplot as plt
+
 from sklearn import model_selection
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
@@ -20,12 +22,8 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 
 #Pour nos données
-#url = "day.csv"
-#names = ['1', '2', '3', '4', '5','6','7','8','9','10','11','12','13','14','15','16']
-#leurs données
-url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv"
-names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
-dataset = pandas.read_csv(url, names=names)
+dataset = OpenData() 
+
 print(dataset)
 print(dataset.shape)
 print(dataset.describe())
