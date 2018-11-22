@@ -7,11 +7,11 @@ from baseline_arima import arima, rmsle
 import pandas as pd
 
 
-def OpenData():
+def open_data():
     df = pd.read_csv('data/day.csv')
     return df
 
 
-affiche_corr(OpenData())
+affiche_corr(open_data())
 arima()
 rmsle(arima()[0], arima()[1])

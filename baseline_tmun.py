@@ -1,7 +1,7 @@
 from baseline_arima import rmsle
-from main import OpenData
+from main import open_data
 
 
 def tmnun():
-    variables = OpenData()
+    variables = open_data()
     count = variables['cnt']

@@ -4,7 +4,7 @@ Created on Thu Nov  8 09:13:00 2018
 
 @author: Charpak 14
 """
-from type_random_forest import OpenData
+from main import open_data
 
 import numpy
 import pandas
@@ -16,7 +16,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error
 
 #################
-dataset = OpenData() #je donne un nom de variable à dataframe
+dataset = open_data() #je donne un nom de variable à dataframe
 print(dataset.dtypes) #affiche le type des variables dans les données
 
 """
