@@ -2,6 +2,6 @@ from baseline_arima import rmsle
 from process import openData
 
 
-def tmnun():
+def countLessOne():
     variables = openData()
     count = variables['cnt']
