@@ -24,10 +24,26 @@ from sklearn.svm import SVC
 
 #Pour nos données
 dataset = openData()
+print(dataset.dtypes)
 
 print(dataset)
+print(dataset.columns)
+
+#3.1 Dimensions of Dataset
 print(dataset.shape)
+
+#3.2 Peek at the Data
+print(dataset.head(20))
+
+#3.3 Statistical Summary
 print(dataset.describe())
-print(dataset.groupby('class').size())
-dataset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+
+#3.4 Class Distribution
+print(dataset.groupby('holiday').size())
+print(dataset.columns)
+print(dataset.groupby('season').size())
+print(dataset.groupby('weathersit').size())
+
+#4. Data Visualization
+dataset.plot(kind='box', subplots=True, layout=(4,4), sharex=False, sharey=False)
 plt.show()
