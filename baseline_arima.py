@@ -51,6 +51,7 @@ def arima():
     predictions = model_fit.predict(1, 731, typ='levels')
     print(predictions)
     predictionsadjusted = np.exp(predictions)
+
     return predictionsadjusted, count
 
 

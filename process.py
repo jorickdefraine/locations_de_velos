@@ -9,6 +9,7 @@ from matrice_de_correlation import affiche_corr
 
 def openData():
     df = pd.read_csv('data/day.csv')
+    df.index = df['dteday']
     return df
 
 
