@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-
 def affiche_corr(df):
     '''
     fonction qui affiche une matrice de correlation  pour chaque pair de colonne de données.

@@ -4,7 +4,8 @@ Created on Thu Nov  8 09:12:45 2018
 
 @author: charpak4.21
 """
-from type_random_forest import OpenData
+
+from process import openData
 
 import pandas
 from pandas.plotting import scatter_matrix
@@ -22,7 +23,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 
 #Pour nos données
-dataset = OpenData() 
+dataset = openData()
 
 print(dataset)
 print(dataset.shape)

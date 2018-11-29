@@ -6,7 +6,7 @@ import math
 from statsmodels.tsa.stattools import acf, pacf
 import statsmodels.tsa.stattools as ts
 from statsmodels.tsa.arima_model import ARIMA
-from processing import openData
+from process import openData
 
 
 def arima():
