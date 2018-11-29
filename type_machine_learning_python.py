@@ -5,7 +5,7 @@ Created on Thu Nov  8 09:12:45 2018
 @author: charpak4.21
 """
 
-from process import openData
+from tools import openData
 
 import pandas
 from pandas.plotting import scatter_matrix
@@ -45,5 +45,36 @@ print(dataset.groupby('season').size())
 print(dataset.groupby('weathersit').size())
 
 #4. Data Visualization
+#4.1 Univariate Plots
 dataset.plot(kind='box', subplots=True, layout=(4,4), sharex=False, sharey=False)
 plt.show()
+
+dataset.hist()
+plt.show()
+
+#4.2 Multivariate Plots
+scatter_matrix(dataset)
+plt.show()
+
+#5. Evaluate Some Algorithms
+#5.1 Create a Validations Dataset
+array = dataset.values
+X = array[:,0:4]
+Y = array[:,4]
+validation_size = 0.20
+seed = 7
+X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
+
+#5.2 Test Harness
+seed = 7
+scoring = 'accuracy'
+
+# Spot Check Algorithms
+models = []
+models.append(('LR', LogisticRegression()))
+models.append(('LDA', LinearDiscriminantAnalysis()))
+models.append(('KNN', KNeighborsClassifier()))
+models.append(('CART', DecisionTreeClassifier()))
+models.append(('NB', GaussianNB()))
+models.append(('SVM', SVC()))
+
