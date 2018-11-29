@@ -6,11 +6,11 @@ import math
 from statsmodels.tsa.stattools import acf, pacf
 import statsmodels.tsa.stattools as ts
 from statsmodels.tsa.arima_model import ARIMA
-from main import open_data
+from processing import openData
 
 
 def arima():
-    variables = open_data()
+    variables = openData()
     count = variables['cnt']
     lnprice = np.log(count)
 
