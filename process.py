@@ -2,10 +2,9 @@
 Fichier principal
 '''
 
-import pandas as pd
-from baseline_arima import arima, rmsle
+from baseline_arima import arima
 from matrice_de_correlation import affiche_corr
-from tools import openData
+from tools import openData, rmsle
 
 """
 affiche_corr(openData())
