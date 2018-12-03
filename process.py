@@ -1,11 +1,15 @@
 '''
 Fichier principal
+Importez votre fichier comportant les fonctions que vous souhaitez exécuter,
+Puis tapez la commande à la suite des autres (vous pouvez commenter les autres pendant vos tests).
+Si une fonction est déjà créee et importée ici, pas besoin de le faire dans votre fichier.
+(exemple : openData et rmsle)
 '''
 
 from baseline_arima import arima
 from matrice_de_correlation import affiche_corr
 from tools import openData, rmsle
 
-affiche_corr(openData())
-arima()
-rmsle(arima()[0], arima()[1])
+#  affiche_corr(openData())
+#  arima()
+#  rmsle(arima()[0], arima()[1])

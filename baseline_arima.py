@@ -10,6 +10,12 @@ from tools import openData
 
 
 def arima():
+    """
+    Le modèle de prédiction ARIMA n'est pas le plus pertinant mais est indispendsable
+    pour évaluer l'efficacité des autres modèles.
+
+    :return: prédictions sur 5 jours du nombre de vélos loués d'après le modèle ARIMA.
+    """
     variables = openData()
     count = variables['cnt']
     lnprice = np.log(count)
