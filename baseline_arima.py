@@ -14,18 +14,20 @@ def arima():
     Le modèle de prédiction ARIMA n'est pas le plus pertinant mais est indispendsable
     pour évaluer l'efficacité des autres modèles.
 
-    :return: prédictions sur 5 jours du nombre de vélos loués d'après le modèle ARIMA.
+    :return: prédictions du jour 1 au jour 731  du
+    nombre de vélos loués d'après le modèle ARIMA.
+    count : valeurs réelles / actuelles du nombre de vélos loués.
     """
     variables = openData()
     count = variables['cnt']
     lnprice = np.log(count)
 
     plt.plot(lnprice)
-    plt.show()
+    #  plt.show()
 
     acf_1 = acf(lnprice)[1:360]
     plt.plot(acf_1)
-    plt.show()
+    #  plt.show()
 
     test_df = pandas.DataFrame([acf_1]).T
     test_df.columns = ['Autocorrelation par pandas']
@@ -33,7 +35,7 @@ def arima():
     test_df.plot(kind='bar')
     pacf_1 = pacf(lnprice)[1:360]
     plt.plot(pacf_1)
-    plt.show()
+    #  plt.show()
 
     test_df = pandas.DataFrame([pacf_1]).T
     test_df.columns = ['Autocorrelation partiel par pandas']
@@ -50,15 +52,14 @@ def arima():
     test_df.plot(kind='bar')
     pacf_1_diff = pacf(diff)[1:360]
     plt.plot(pacf_1_diff)
-    plt.show()
+    #  plt.show()
 
     price_matrix = lnprice.as_matrix()
     model = ARIMA(price_matrix, order=(0, 1, 0))
     model_fit = model.fit(disp=0)
-    print(model_fit.summary())
 
     predictions = model_fit.predict(1, 731, typ='levels')
-    print(predictions)
+    #  print(predictions)
     predictionsadjusted = np.exp(predictions)
 
     return predictionsadjusted, count

@@ -13,8 +13,7 @@ import tests
 from type_count_less_one import countLessOne
 
 #  affiche_corr(openData())
-#  arima()
-#  rmsle(arima()[0], arima()[1])
-#print(openData()[:]['cnt'])
+print(arima())
+print(rmsle(arima()[0], arima()[1]))
 
 # print(rmsle(countLessOne()[0], countLessOne()[1]))
