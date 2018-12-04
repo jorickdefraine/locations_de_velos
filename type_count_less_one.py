@@ -10,9 +10,9 @@ def countLessOne():
     :return: prediction du jour 2 au jour 731.
     """
     variables = openData()
-    count = variables[:]["cnt"]
+    count = variables[:]["cnt"]  # les valeurs actuelles (dans data)
     prediction = []
+    count2 = [x for i, x in enumerate(count) if i != 1]  # enlève la première ligne de count
     for i in range(1, len(count)):
         prediction.append(count[:][i - 1])
-    prediction = np.reshape(prediction,len(prediction))
-    return prediction, count
+    return prediction, count2

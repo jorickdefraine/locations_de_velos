@@ -16,4 +16,5 @@ from type_count_less_one import countLessOne
 #  arima()
 #  rmsle(arima()[0], arima()[1])
 #print(openData()[:]['cnt'])
-print(countLessOne()[0])
+
+# print(rmsle(countLessOne()[0], countLessOne()[1]))
