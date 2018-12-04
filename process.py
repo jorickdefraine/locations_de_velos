@@ -9,7 +9,11 @@ Si une fonction est déjà créee et importée ici, pas besoin de le faire dans 
 from baseline_arima import arima
 from matrice_de_correlation import affiche_corr
 from tools import openData, rmsle
+import tests
+from type_count_less_one import countLessOne
 
 #  affiche_corr(openData())
 #  arima()
 #  rmsle(arima()[0], arima()[1])
+#print(openData()[:]['cnt'])
+print(countLessOne()[0])

@@ -21,17 +21,20 @@ def arima():
     lnprice = np.log(count)
 
     plt.plot(lnprice)
-    # plt.show()
+    plt.show()
+
     acf_1 = acf(lnprice)[1:360]
     plt.plot(acf_1)
-    # plt.show()
+    plt.show()
+
     test_df = pandas.DataFrame([acf_1]).T
     test_df.columns = ['Autocorrelation par pandas']
     test_df.index += 1
     test_df.plot(kind='bar')
     pacf_1 = pacf(lnprice)[1:360]
     plt.plot(pacf_1)
-    # plt.show()
+    plt.show()
+
     test_df = pandas.DataFrame([pacf_1]).T
     test_df.columns = ['Autocorrelation partiel par pandas']
     test_df.index += 1
@@ -47,7 +50,7 @@ def arima():
     test_df.plot(kind='bar')
     pacf_1_diff = pacf(diff)[1:360]
     plt.plot(pacf_1_diff)
-    # plt.show()
+    plt.show()
 
     price_matrix = lnprice.as_matrix()
     model = ARIMA(price_matrix, order=(0, 1, 0))
