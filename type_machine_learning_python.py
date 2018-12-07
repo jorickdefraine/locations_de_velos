@@ -15,7 +15,9 @@ import matplotlib.pyplot as plt
 dataset = openData()
 
 #Walk Forward Validation
-X = dataset.values
+X = dataset.values#choisir la composante la plus conséquente
+Y = #extraite la colonne cnt
+
 n_train = 500
 n_records = len(X)
 for i in range(n_train, n_records):
