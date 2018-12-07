@@ -8,7 +8,9 @@ def affiche_corr(df):
 
     Paramètres:
         DataFrames: pandas DataFrame
-        size: taille verticale et horizontale de la matrice de correlation'''
+        size: taille verticale et horizontale de la matrice de correlation
+    '''
+
     correlation = df.corr(method='pearson')
     sns.heatmap(correlation, xticklabels=correlation.columns, yticklabels=correlation.columns)
     plt.title("Matrice de corrélation pour la location de vélo")
