@@ -18,10 +18,10 @@ def arima(data):
     Le modèle de prédiction ARIMA n'est pas le plus pertinant mais est indispendsable
     pour évaluer l'efficacité des autres modèles.
 
-    :return: prédictions du jour 1 au jour 731  du
-    nombre de vélos loués d'après le modèle ARIMA.
+    :return: prédictions du nombre de vélos louésd'après le modèle ARIMA.
     count : valeurs réelles / actuelles du nombre de vélos loués.
     """
+
     variables = data
     count = variables['cnt']
 
@@ -55,6 +55,7 @@ def arima(data):
     test_df.index += 1
     test_df.plot(kind='bar')
     result = ts.adfuller(lncount, 1) # on utilise le test de Dickey-Fuller pour déterminer si les données sont stationnaires.
+
     print(result)
     lncount_diff = lncount - lncount.shift()
     diff = lncount_diff.dropna()
