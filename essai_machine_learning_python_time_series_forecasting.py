@@ -16,12 +16,11 @@ dataset = openData()
 
 #Walk Forward Validation
 X = dataset.values#choisir la composante la plus conséquente
-Y = #extraite la colonne cnt
+Y = dataset.columns[15]#extraire la colonne cnt
 
 n_train = 500
 n_records = len(X)
 for i in range(n_train, n_records):
-    train, test = X[0:i], X[i:i+1]
+    X_train, Y_test = X[0:i], X[i:i+1]
     print('train=%d, test=%d' % (len(train), len(test)))
 
-plt.show()
