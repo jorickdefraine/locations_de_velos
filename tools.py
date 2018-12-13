@@ -28,4 +28,3 @@ def rmsle(predict_cnt, actual_cnt):
         somme += (np.log(predict_cnt[i] + 1) - np.log(actual_cnt[i] + 1)) ** 2
     score = np.sqrt((1 / len(actual_cnt)) * somme)
     return score
-
