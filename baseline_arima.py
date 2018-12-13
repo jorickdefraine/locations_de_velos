@@ -74,4 +74,3 @@ def arima(data, t):
     predictions_adjusted = predictions_adjusted.reshape(-1, 1)
     print(predictions_adjusted, len(predictions_adjusted))
     return predictions_adjusted, count
-
