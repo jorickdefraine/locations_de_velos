@@ -10,13 +10,13 @@ from baseline_arima import arima
 from matrice_de_correlation import affiche_corr
 from tools import openData, rmsle
 import tests
-from type_count_less_one import countLessOne
+from model_count_less_one import countLessOne
 
-affiche_corr()
+#affiche_corr()
 
 
-arima(openData(), 180)
-print(rmsle(arima()[0], arima()[1]))
-print(rmsle(countLessOne()[0], countLessOne()[1]))
+arima(openData())
+#print(rmsle(arima()[0], arima()[1]))
+#print(rmsle(countLessOne()[0], countLessOne()[1]))
 
 

@@ -13,7 +13,7 @@ from statsmodels.tsa.arima_model import ARIMA
 from tools import openData
 
 
-def arima(data, t):
+def arima(data):
     """
     Le modèle de prédiction ARIMA n'est pas le plus pertinant mais est indispendsable
     pour évaluer l'efficacité des autres modèles.
@@ -21,7 +21,7 @@ def arima(data, t):
     :return: prédictions du nombre de vélos louésd'après le modèle ARIMA.
     count : valeurs réelles / actuelles du nombre de vélos loués.
     """
-    count = data[:t]['cnt']
+    count = data[:]['cnt']
 
     #  Dans un premier temps, pour effectuer une analyse de séries chronologiques,
     #  nous devons exprimer notre ensemble de données en termes de logarithmes.
@@ -34,7 +34,7 @@ def arima(data, t):
     # on affiche le compte de vélos loués (exprimé en termes de logarithmes) en fonction du jour
     plt.show()
 
-    acf_1 = acf(lncount)[:t]
+    acf_1 = acf(lncount)[:]
     plt.title("ACF")
     plt.plot(acf_1)
     plt.show()
@@ -44,7 +44,7 @@ def arima(data, t):
     test_df.index += 1
     test_df.plot(kind='bar')
     plt.title("PACF")
-    pacf_1 = pacf(lncount)[:t]
+    pacf_1 = pacf(lncount)[:]
     plt.plot(pacf_1)
     plt.show()
 
@@ -55,12 +55,12 @@ def arima(data, t):
 
     lncount_diff = lncount - lncount.shift()
     diff = lncount_diff.dropna()
-    acf_1_diff = acf(diff)[:t]
+    acf_1_diff = acf(diff)[:]
     test_df = pandas.DataFrame([acf_1_diff]).T
     test_df.columns = ['Autocorrelation des différences premières']
     test_df.index += 1
     test_df.plot(kind='bar')
-    pacf_1_diff = pacf(diff)[1:t]
+    pacf_1_diff = pacf(diff)[:]
     plt.title("PACF DIFF")
     plt.plot(pacf_1_diff)
     plt.show()
@@ -69,8 +69,8 @@ def arima(data, t):
     model = ARIMA(count_matrix, order=(0, 1, 0))
     model_fit = model.fit(disp=0)
 
-    predictions = model_fit.predict(1, t, typ='levels')
+    predictions = model_fit.predict(1, 1, typ='levels')
     predictions_adjusted = np.exp(predictions)
     predictions_adjusted = predictions_adjusted.reshape(-1, 1)
-    print(predictions_adjusted, len(predictions_adjusted))
+    print(predictions_adjusted)
     return predictions_adjusted, count
