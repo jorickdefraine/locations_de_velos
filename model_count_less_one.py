@@ -8,7 +8,7 @@ def countLessOne():
     prédiction la plus basique.
     prediction(t) = cnt(t-1)
 
-    :return: prediction du jour 2 au jour 731.
+    :return: prediction sur les 6er mois puis 6er mois +1j ...
     count2 : valeurs réelles / actuelles du nombre de vélos loués.
     """
     variables = openData()
@@ -18,5 +18,4 @@ def countLessOne():
     for i in range(1, len(count)):
         prediction.append(count[:][i - 1])
     return prediction, count2
-
 
