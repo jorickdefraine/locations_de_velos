@@ -10,7 +10,7 @@ from baseline_arima import arima
 from matrice_de_correlation import affiche_corr
 from tools import openData, rmsle
 import tests
-from type_count_less_one import countLessOne
+from model_count_less_one import countLessOne
 
 #  affiche_corr(openData())
 
