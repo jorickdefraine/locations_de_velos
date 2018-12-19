@@ -8,12 +8,13 @@ Si une fonction est déjà créee et importée ici, pas besoin de le faire dans 
 
 from features.tools import walkForwardValidation
 from features.model_random_forest import randomForest
+from features.matrice_de_correlation import affiche_corr
 #affiche_corr()
 
 
 #arima(openData())
-print(randomForest())
-
+#print(randomForest())
+affiche_corr()
 #print(rmsle(arima()[0], arima()[1]))
 #print(rmsle(countLessOne()[0], countLessOne()[1]))
 

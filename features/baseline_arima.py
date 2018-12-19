@@ -15,17 +15,17 @@ def arima(data):
     pour évaluer l'efficacité des autres modèles.
 
     :return: prédictions du nombre de vélos louésd'après le modèle ARIMA.
-    count : valeurs réelles / actuelles du nombre de vélos loués.
+    cnt_actual : valeurs réelles / actuelles du nombre de vélos loués.
     """
-    count = data[:]['cnt']
+    cnt_actual = data[:]['cnt']
 
     #  Dans un premier temps, pour effectuer une analyse de séries chronologiques,
     #  nous devons exprimer notre ensemble de données en termes de logarithmes.
     #  Si nos données sont exprimées uniquement en termes de compte,
     #  cela ne permet pas une capitalisation continue des rendements dans le temps et donnera des résultats trompeurs.
-    lncount = np.log(count)
+    lncount = np.log(cnt_actual)
 
-    plt.title("log(count)")
+    plt.title("log(cnt_actual)")
     plt.plot(lncount)
     # on affiche le compte de vélos loués (exprimé en termes de logarithmes) en fonction du jour
     plt.show()
@@ -69,4 +69,4 @@ def arima(data):
     predictions_adjusted = np.exp(predictions)
     predictions_adjusted = predictions_adjusted.reshape(-1, 1)
     print(predictions_adjusted)
-    return predictions_adjusted, count
+    return predictions_adjusted, cnt_actual
