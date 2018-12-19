@@ -8,14 +8,15 @@ Si une fonction est déjà créee et importée ici, pas besoin de le faire dans 
 
 from baseline_arima import arima
 from matrice_de_correlation import affiche_corr
-from tools import openData, rmsle
+from tools import openData, splitData, rmsle
 import tests
 from model_count_less_one import countLessOne
 
 #affiche_corr()
 
 
-arima(openData())
+#arima(openData())
+print(splitData())
 #print(rmsle(arima()[0], arima()[1]))
 #print(rmsle(countLessOne()[0], countLessOne()[1]))
 

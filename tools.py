@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from matplotlib import pyplot
 
 
 def openData():
@@ -11,6 +12,26 @@ def openData():
     df['dteday'] = pd.to_datetime(df['dteday'])
     df.index = df['dteday']
     return df
+
+
+def splitData():
+    """
+    Sépare la liste des données en deux parties (60/40) pour faciliter la cross-validation.
+    :return: en premier la liste des données d'entrainement pour la cross-validation,
+    en second la liste des données de tests pour la cross-validation.
+    """
+    split = openData().values
+    train_size = int(len(split) * 0.70)
+    train, test = split[0:train_size], split[train_size:len(split)]
+    print('Nb de données totales: ', (len(split)))
+    print('Nb données d entrainement: ', (len(train)))
+    print('Nb données de tests:', (len(test)))
+    pyplot.title('Séparation des données en "train" (bleu) et "test" (rouge)')
+    pyplot.plot([x for x in range(train_size)], train, 'b')
+    pyplot.plot([x for x in range(train_size, len(split))], test, 'r')
+    pyplot.axis([0, 750, 0, 9000])
+    pyplot.show()
+    return train, test
 
 
 def rmsle(predict_cnt, actual_cnt):
