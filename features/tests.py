@@ -3,7 +3,7 @@ Ce fichier continent les différents tests de fonctions.
 Ne pas oublier d'importer chaque fonction et fichier utilisé (une fois suffit).
 """
 
-from tools import rmsle, openData
+from features.tools import rmsle, openData
 import numpy as np
 
 l = list(range(10))

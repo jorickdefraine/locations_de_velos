@@ -6,17 +6,14 @@ Si une fonction est déjà créee et importée ici, pas besoin de le faire dans 
 (exemple : openData et rmsle)
 '''
 
-from baseline_arima import arima
-from matrice_de_correlation import affiche_corr
-from tools import openData, splitData, rmsle
-import tests
-from model_count_less_one import countLessOne
-
+from features.tools import walkForwardValidation
+from features.model_random_forest import randomForest
 #affiche_corr()
 
 
 #arima(openData())
-print(splitData())
+print(randomForest())
+
 #print(rmsle(arima()[0], arima()[1]))
 #print(rmsle(countLessOne()[0], countLessOne()[1]))
 

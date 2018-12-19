@@ -5,11 +5,7 @@ Created on Thu Nov  8 09:12:45 2018
 @author: charpak4.21
 """
 #from type_random_forest import OpenData
-from tools import openData
-
-import pandas
-from pandas.plotting import scatter_matrix
-import matplotlib.pyplot as plt
+from features.tools import openData
 
 #Pour nos données
 dataset = openData()
@@ -18,9 +14,9 @@ dataset = openData()
 X = dataset.values#choisir la composante la plus conséquente
 Y = dataset.columns[15]#extraire la colonne cnt
 
-n_train = 500
-n_records = len(X)
-for i in range(n_train, n_records):
-    X_train, Y_test = X[0:i], X[i:i+1]
-    print('train=%d, test=%d' % (len(train), len(test)))
+#n_train = 500
+#n_records = len(X)
+#for i in range(n_train, n_records):
+#    X_train, Y_test = X[0:i], X[i:i+1]
+#    print('train=%d, test=%d' % (len(train), len(test)))
 

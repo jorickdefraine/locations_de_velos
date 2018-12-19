@@ -1,6 +1,4 @@
-from tools import openData
-import numpy as np
-import matplotlib.pyplot as plt
+from features.tools import openData
 
 
 def countLessOne():

@@ -33,6 +33,16 @@ def splitData():
     pyplot.show()
     return train, test
 
+def walkForwardValidation():
+    """
+    :return: Affiche la taille des données d'entrainement et de tests crées.
+    """
+    walk = openData().values
+    n_train = int(len(walk) * 0.70)
+    n_records = len(walk)
+    for i in range(n_train, n_records):
+        train, test = walk[0:i], walk[i:i+1]
+        print('train=%d, test=%d' % (len(train), len(test)))
 
 def rmsle(predict_cnt, actual_cnt):
     """

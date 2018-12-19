@@ -4,16 +4,13 @@ Created on Thu Nov  8 09:13:00 2018
 
 @author: Charpak 14
 """
-from process import openData
+from features.tools import openData
 
-import numpy
 import pandas
-import matplotlib.pyplot as plt
+
 #from keras.models import Sequential
 #from keras.layers import Dense
 #from keras.layers import LSTM
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.metrics import mean_squared_error
 
 #################
 dataset = openData() #je donne un nom de variable à dataframe

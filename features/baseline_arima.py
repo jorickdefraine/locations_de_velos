@@ -1,16 +1,12 @@
 import pandas
-import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
 import numpy as np
-import math
 
 #  La bibliothèque d'importance majeure dans ce cas est statsmodels,
 #  puisque nous utilisons cette bibliothèque
 #  pour calculer les statistiques ACF et PACF, et aussi pour formuler le modèle ARIMA.
 from statsmodels.tsa.stattools import acf, pacf
-import statsmodels.tsa.stattools as ts
 from statsmodels.tsa.arima_model import ARIMA
-from tools import openData
 
 
 def arima(data):
