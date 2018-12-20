@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
-from programme.tools import openData
+from tools import openData
 
 def affiche_corr():
     '''

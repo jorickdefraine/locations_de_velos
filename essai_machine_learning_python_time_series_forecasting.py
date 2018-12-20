@@ -5,7 +5,7 @@ Created on Thu Nov  8 09:12:45 2018
 @author: charpak4.21
 """
 #from type_random_forest import OpenData
-from programme.tools import openData
+from tools import openData
 
 #Pour nos données
 dataset = openData()
