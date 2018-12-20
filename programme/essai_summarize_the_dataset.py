@@ -5,7 +5,7 @@ Created on Thu Nov  8 09:12:45 2018
 @author: charpak4.21
 """
 
-from features.tools import openData
+from programme.tools import openData
 
 from pandas.plotting import scatter_matrix
 import matplotlib.pyplot as plt

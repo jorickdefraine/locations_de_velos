@@ -6,13 +6,13 @@ Si une fonction est déjà créee et importée ici, pas besoin de le faire dans 
 (exemple : openData et rmsle)
 '''
 
-from features.tools import walkForwardValidation
-from features.model_random_forest import randomForest
+from programme.tools import openData
+import matplotlib.pyplot as plt
 #affiche_corr()
 
-
+plt.plot(openData()['cnt'])
+plt.show()
 #arima(openData())
-print(randomForest())
 
 #print(rmsle(arima()[0], arima()[1]))
 #print(rmsle(countLessOne()[0], countLessOne()[1]))
