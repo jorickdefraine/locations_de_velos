@@ -19,10 +19,10 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 
-url = "\Users\charpak4.21\locations_de_velos"
-names = ['1', '2', '3', '4', '5','6','7','8','9','10','11','12','13','14','15','16']
-dataset = pandas.read_csv(url, names=names)
-
-print(dataset.shape)
-print(dataset.head(20))
-print(dataset.describe())
+#url = "\Users\charpak4.21\locations_de_velos"
+#names = ['1', '2', '3', '4', '5','6','7','8','9','10','11','12','13','14','15','16']
+#dataset = pandas.read_csv(url, names=names)
+#
+#print(dataset.shape)
+#print(dataset.head(20))
+#print(dataset.describe())

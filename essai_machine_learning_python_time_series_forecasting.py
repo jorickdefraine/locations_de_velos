@@ -8,11 +8,11 @@ Created on Thu Nov  8 09:12:45 2018
 from tools import openData
 
 #Pour nos données
-dataset = openData()
+#dataset = openData()
 
 #Walk Forward Validation
-X = dataset.values#choisir la composante la plus conséquente
-Y = dataset.columns[15]#extraire la colonne cnt
+#X = dataset.values#choisir la composante la plus conséquente
+#Y = dataset.columns[15]#extraire la colonne cnt
 
 #n_train = 500
 #n_records = len(X)
