@@ -65,7 +65,7 @@ def arima(data):
     model = ARIMA(count_matrix, order=(0, 1, 0))
     model_fit = model.fit(disp=0)
 
-    predictions = model_fit.predict(1, 1, typ='levels')
+    predictions = model_fit.predict(511, 731, typ='levels')
     predictions_adjusted = np.exp(predictions)
     predictions_adjusted = predictions_adjusted.reshape(-1, 1)
     print(predictions_adjusted)
