@@ -1,6 +1,5 @@
 """
-Ce fichier continent les différents tests de fonctions.
-Ne pas oublier d'importer chaque fonction et fichier utilisé (une fois suffit).
+This script tests functions.
 """
 
 from tools import rmsle, openData

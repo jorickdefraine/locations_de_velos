@@ -1,0 +1,6 @@
+#Pycharm files
+*.pyc
+*.idea
+
+#cache
+__pycache__/

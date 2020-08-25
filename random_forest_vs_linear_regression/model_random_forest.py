@@ -24,8 +24,8 @@ def rmsle(y, y_):
     return np.sqrt(np.mean(calc))
 
 
-train_data = pd.read_csv("data/train.csv")
-test_data = pd.read_csv("data/test.csv")
+train_data = pd.read_csv("../data/train.csv")
+test_data = pd.read_csv("../data/test.csv")
 
 train_data["year"] = train_data.datetime.apply(lambda x: x.split()[0].split("-")[0])
 train_data["month"] = train_data.datetime.apply(lambda x: x.split()[0].split("-")[1])

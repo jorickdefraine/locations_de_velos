@@ -16,11 +16,10 @@ def randomForest():
     print("cnt", cnt)
     X = dataset.iloc[:, 2:13].values  # Independent variables. Removed the instant and the dteday columns
     print("X", X)
-    y = dataset.iloc[:,
-        15].values  # Dependent variable. The data is a range of numbers. Hence it is a regression problem
+    y = dataset.iloc[:,15].values  # Dependent variable. The data is a range of numbers. Hence it is a regression problem
     print("y", y)
     # Categorical data. We have to OneHotEncode them
-    ohe = OneHotEncoder(categorical_features=range(0, 7))  # These are the columns containing categorical data
+    ohe = OneHotEncoder(categories=range(0, 7))  # These are the columns containing categorical data
     X = ohe.fit_transform(X).toarray()
 
     # Splitting the data set into training and test set.
