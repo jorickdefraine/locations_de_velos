@@ -2,7 +2,7 @@
 This script tests functions.
 """
 
-from tools import rmsle, openData
+from src.tools import rmsle, openData
 import numpy as np
 
 

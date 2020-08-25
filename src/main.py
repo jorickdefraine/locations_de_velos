@@ -1,9 +1,5 @@
-from model_random_forest import randomForest
-import matplotlib.pyplot as plt
 from baseline_arima import arima
-from tools import openData, rmsle
-from model_count_less_one import countLessOne
-from matrice_de_correlation import affiche_corr
+from tools import openData
 
 if __name__ == '__main__':
     #affiche_corr()

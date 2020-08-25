@@ -8,7 +8,7 @@ def openData():
     panda permet de lire les données d'après un fichier .csv
     :return: données sous forme de tableau en indexant la colonne du temps (en jour).
     """
-    df = pd.read_csv('data/day.csv')
+    df = pd.read_csv('./data/day.csv')
     df['dteday'] = pd.to_datetime(df['dteday'])
     df.index = df['dteday']
     return df

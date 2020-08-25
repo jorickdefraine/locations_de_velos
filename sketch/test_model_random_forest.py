@@ -1,17 +1,14 @@
-import numpy as np
-import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import cross_val_score
-import os
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
-from tools import openData, rmsle
+from src.tools import openData, rmsle
 
 
 def randomForest():
-    dataset = pd.read_csv("data/day.csv")
+    dataset = pd.read_csv("../data/day.csv")
     cnt = openData()[:147]['cnt']
     print("cnt", cnt)
     X = dataset.iloc[:, 2:13].values  # Independent variables. Removed the instant and the dteday columns

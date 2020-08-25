@@ -1,4 +1,4 @@
-from tools import openData
+from src.tools import openData
 
 
 def countLessOne():
@@ -16,13 +16,3 @@ def countLessOne():
     for i in range(1, len(count)):
         prediction.append(count[:][i - 1])
     return prediction, count2
-
-def countLessOneLearning():
-    """
-    prédiction prenant en compte les principaux paramètres,
-    :return: modèle linéaire donnant une prédiction pour 1 jour après.
-    """
-    # les valeurs actuelles (dans data)
-    variables = openData()
-    prediction = []
-
